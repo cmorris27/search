@@ -1,0 +1,36 @@
+{
+  "name": "cypress-cucumber",
+  "version": "0.0.1",
+  "description": "Example cypress cucumber framework with tests",
+  "main": "index.js",
+  "scripts": {
+    "open:cypress": "cypress open",
+    "test": "cypress run && node cucumber-html-report.js"
+  },
+  "keywords": [
+    "cucumber",
+    "cypress",
+    "javascript",
+    "gherkin"
+  ],
+  "author": "Chris",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.0.3",
+    "cypress-cucumber-preprocessor": "^4.3.0",
+    "multiple-cucumber-html-reporter": "^1.18.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/integration",
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "Report_",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "dependencies": {
+    "chai": "^4.3.7"
+  }
+}
