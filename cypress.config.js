@@ -12,7 +12,8 @@ module.exports = defineConfig({
     trashAssetsBeforeRuns: true,
     videosFolder: 'cypress/videos',
     env: {
-        baseUrl: 'http://www.google.com',
+        baseUrl: 'http://www.google.com/',
+        apiBaseUrl: 'https://api.punkapi.com/v2/',
         defaultCommandTimeout: 6000,
         execTimeout: 60000,
         pageLoadTimeout: 60000,

@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "open:cypress": "cypress open",
-    "test": "cypress run && node cucumber-html-report.js"
+    "trash:generated:reports": "rm -rf reports/cucumber-htmlreport.html &&  rm -rf cypress/cucumber-json",
+    "test:ui": "npx cypress-tags run -e TAGS='@ui' --headless --browser chrome && node cucumber-html-report.js",
+    "test:api": "npx cypress-tags run -e TAGS='@api' --headless --browser chrome && node cucumber-html-report.js",
+    "test:all": "npm run trash:generated:reports && npm run test:api && npm run test:ui"
   },
   "keywords": [
     "cucumber",
